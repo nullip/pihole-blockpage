@@ -8,8 +8,17 @@
      <link rel="stylesheet" href="bootstrap.min.css">
      <link rel="icon" href="pi.png">
 </head>
-
 <body class="bg-dark text-white py-5">
+	<script>
+	baseurl = "http://pi.hole/admin/api.php?list=white&auth={REPLACEME}&add="
+	function buildURL(item)
+	{
+		item.href = baseurl + window.location.hostname;
+		console.log(item.href);
+		return true;
+	}
+
+	</script>
      <div class="container py-5">
           <div class="row">
                   <img src="pi.png" width="145" style="margin-bottom:25px">
@@ -17,17 +26,19 @@
                     <h3>Request Blocked :(</h3>
                     <p>The website you are trying to access is blocked due to security reasons.<br>Please go back to the previous page to continue browsing.</p>
                     <a class="btn btn-danger" href="javascript:history.back()">Go Back</a>
+		    <a class="btn btn-danger" onClick="MyWindow=window.open('http://pi.hole/admin/api.php?disable=15&auth={REPLACEME}'); return false;" href=".">15-Second Bypass</a>
+		    <a class="btn btn-danger" id="whitelist" onClick="return buildURL(this)" href="" target="_blank">Whitelist Domain</a>
                </div>
           </div>
      </div>
      <div id="footer" class="text-center">
 	 <font color="#a9a9a9" size="0.7em">
-		ns2.ion.gleeze.com
+		pi.hole
 	 </font>
 	 <br>
        <font color="#a9a9a9">
          Secured by
-       </font><a href="http://ns2.ion.gleeze.com/admin" style="color:#dc3545;attribute:underline">Pi-hole</a>
+       </font><a href="http://pi.hole/admin" style="color:#dc3545;attribute:underline">Pi-hole</a>
     </div>
 </body>
 </html>
