@@ -2,4 +2,4 @@
 # Screenshot
 
 Custom 2
-![](https://raw.githubusercontent.com/senhan07/project-screenshot/master/pihole-blockpage/custom2.png)
+![image](https://github.com/nullip/pihole-blockpage/assets/107959430/03683ad2-39a6-402d-8ec0-e6df12b6bb52)
